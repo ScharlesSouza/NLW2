@@ -1,8 +1,3 @@
-:root{
-
-    font-size: 40%;
-}
-
 #page-landing{
     background: var(--color-primary);
 }
@@ -50,16 +45,94 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+
+    transition: background 0.2s; /*transiçao do botao*/
+
     color: var(--color-button-text);
+    
 }
 
 .buttons-container a img{
     width: 4rem;
+    margin-right: 2.4rem;
 }
 
 .buttons-container a.study{
     background: var(--color-primary-lighter);
 }
+.buttons-container a.study:hover{
+
+    background: var(--color-primary-light);
+}
 .buttons-container a.give-classes{
     background: var(--color-secondary);
+    margin-right: 0;
+}
+.buttons-container a.give-classes:hover{
+
+    background: var(--color-secondary-dark);
+}
+.total-connections{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total-connections img {
+    margin-left: 0.8rem;
+}
+
+@media(max-witdh: 699px){
+    :root{
+
+        font-size: 40%;
+    }
+
+}
+
+@media(min-width: 1100px){
+    #page-landing #container{
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas: 
+        "proffy image image"
+        "button button texting";
+
+        column-gap: 87px;
+        row-gap: 86px;
+        
+    }
+
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center;
+        margin: 0;
+    }
+
+    .logo-container img{
+        height: 100%;
+    }
+
+    .hero-image{
+        grid-area: image;
+        height: 350px;
+        
+    }
+    .buttons-container{
+
+        grid-area: button;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .total-connections{
+
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+
+
 }
